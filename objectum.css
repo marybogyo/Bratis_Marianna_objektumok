@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+article{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+body{
+    max-width: 80%;
+    margin: 0 auto;
+}
+div{
+    background-color: aqua;
+    padding: 10px;
+    margin: 10px;
+}
