@@ -108,33 +108,32 @@ function urlap() {
     let iKor = document.getElementById("inputKor").value;
     let iFajta = document.getElementById("inputFajta").value;
 
+    const ADATLISTA = [iNev, iKor, iFajta]
+
     if (iNev != "" && iKor != "" && iFajta != "")
     {
         let txt = "<div>";
 
       let sorrend = 0;
-      let mi = "";
-      for (let index = 0; index < 3; index++) {
+      
+      for (let index = 0; index < ADATLISTA.length; index++) {
         let megnevezes = "";
         switch (sorrend) {
           case 0:
             megnevezes = NEV;
-            mi = iNev;
             sorrend += 1;
             break;
           case 1:
             megnevezes = KOR;
-            mi = iKor;
             sorrend += 1;
             break;
           case 2:
             megnevezes = FAJTA;
-            mi = iFajta;
             break;
           default:
             break;
         }
-        txt += `<p>${megnevezes + mi}</p>`;
+        txt += `<p>${megnevezes + ADATLISTA[index]}</p>`;
       }
       txt += `<button onclick="this.parentNode.remove()">Gomb</button>`;
       txt += `</div>`;
